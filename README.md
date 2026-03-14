@@ -11,7 +11,7 @@ A little about me:
 A meme that captures how I currently feel about my university studies is ![](https://c.tenor.com/8druEACXtX8AAAAd/tenor.gif)
 
 # Part A
-## Top Three University Subjects
+## My Top Three University Subjects
 
 **1. Psychology**
   * [*UoA Psychology*](https://www.auckland.ac.nz/en/study/study-options/find-a-study-option/psychology.html)
