@@ -16,6 +16,11 @@
 
 ![](https://coursegate.co.uk/wp-content/uploads/2021/07/Pharmacology.png)
 
+**Other Website Links**
+* [Tenor](https://tenor.com/) 
+* [Youtube](https://www.youtube.com/)
+* [Grammarly](https://www.grammarly.com/)
+
 **Animated GIF**
 
 ![](https://media1.tenor.com/m/9v8xbuFdDGkAAAAC/stan-twitter-reaction-meme.gif)
