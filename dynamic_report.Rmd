@@ -1,0 +1,80 @@
+---
+title: My dynamic report
+output: html_fragment
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE)
+
+library(tidyverse)
+library(magick)
+
+```
+
+```{css}
+body {
+  color: #000000;
+  background-color: #B4C3FA;
+  line-height: 2;
+  font-family: 'Raleway', sans-serif;
+}
+p {
+  font-weight: normal;
+  font-family: 'Quicksand', sans-serif;
+}
+
+```
+
+## Patterns of Phone Use in Public Spaces
+
+This form is designed to capture brief observations of people's phone usage in public areas. Its aim is to gather information on the nature of phone activities, the situational context, and the length of time the phone is used.
+
+```{r}
+csv_file <- "https://docs.google.com/spreadsheets/d/e/2PACX-1vTRTaioXRkrCqyQKO49F7zdTbDvV1BsqhdRlngD3tI0sfc-JLx63qtKP5AgqJ3iKKgJ6LVKt4Z1mIeP/pub?gid=824138341&single=true&output=csv"
+
+logged_data <- read.csv(csv_file)
+
+latest_data <- logged_data %>%
+  rename(phone_activity = 2,
+         minutes = 3,
+         observ_loc = 4,
+         time_of_day = 5)
+
+#Summary values
+
+min(latest_data$minutes)
+max(latest_data$minutes)
+
+```
+
+```{r, echo=FALSE}
+latest_data %>%
+  ggplot(aes(x = observ_loc)) +
+  geom_bar(fill = "darkgreen") +
+  theme_minimal() +
+  labs(title = "Observations by Location",
+       x = "Location",
+       y = "Count")
+
+```
+
+```{r, echo=FALSE}
+latest_data %>%
+  ggplot(aes(x = phone_activity)) +
+  geom_bar(fill = "steelblue") +
+  theme_minimal() +
+  labs(title = "Types of Phone Activity Observed",
+       x = "Activity Type",
+       y = "Count")
+```
+
+```{r, echo=FALSE}
+paste("The minimum time spent on the phone was", min(latest_data$minutes), "minutes.")
+```
+
+```{r, echo=FALSE}
+paste("The maximum time spent on the phone was", max(latest_data$minutes), "minutes.")
+```
+The best pet to have is a of course!
+
+![](https://c.tenor.com/-qBsG1HwR4oAAAAC/tenor.gif)
