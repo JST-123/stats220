@@ -27,10 +27,21 @@ p {
 
 ## Patterns of Phone Use in Public Spaces
 
-This form is designed to capture brief observations of people's phone usage in public areas. Its aim is to gather information on the nature of phone activities, the situational context, and the length of time the phone is used.
+This form is designed to capture brief observations of phone usage in public areas. Its aim is to gather information on the nature of phone activities, the situational context, and the length of time the phone is used.
 
 ```{r}
 csv_file <- "https://docs.google.com/spreadsheets/d/e/2PACX-1vTRTaioXRkrCqyQKO49F7zdTbDvV1BsqhdRlngD3tI0sfc-JLx63qtKP5AgqJ3iKKgJ6LVKt4Z1mIeP/pub?gid=824138341&single=true&output=csv"
+
+header <- image_blank(width = 700, height = 100, color = "#B4C3FA") %>%
+  image_annotate(
+    text = "Observed Phone Use by Location and Activity",
+    color = "black",
+    size = 25,
+    gravity = "west",
+    font = "Raleway",
+  )
+
+header
 
 logged_data <- read.csv(csv_file)
 
@@ -68,4 +79,18 @@ paste("The minimum time spent on the phone was", min(latest_data$minutes), "minu
 
 ```{r, echo=FALSE}
 paste("The maximum time spent on the phone was", max(latest_data$minutes), "minutes.")
+```
+
+```{r, echo=FALSE}
+summary_img <- image_blank(width = 600, height = 150, color = "white") %>%
+  image_annotate(
+    text = paste0( "Phone Use Summary\n",
+      "Min: ", min(latest_data$minutes), " minutes   |   ",
+      "Max: ", max(latest_data$minutes), " minutes"),
+     color = "black",
+     size = 30,
+     gravity = "center",
+     font = "Quicksand")
+
+summary_img
 ```
