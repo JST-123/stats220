@@ -39,12 +39,6 @@ latest_data <- logged_data %>%
          minutes = 3,
          observ_loc = 4,
          time_of_day = 5)
-
-#Summary values
-
-min(latest_data$minutes)
-max(latest_data$minutes)
-
 ```
 
 ```{r, echo=FALSE}
@@ -75,6 +69,3 @@ paste("The minimum time spent on the phone was", min(latest_data$minutes), "minu
 ```{r, echo=FALSE}
 paste("The maximum time spent on the phone was", max(latest_data$minutes), "minutes.")
 ```
-The best pet to have is a of course!
-
-![](https://c.tenor.com/-qBsG1HwR4oAAAAC/tenor.gif)
