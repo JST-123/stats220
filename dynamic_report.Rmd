@@ -55,7 +55,7 @@ latest_data <- logged_data %>%
 ```{r, echo=FALSE}
 latest_data %>%
   ggplot(aes(x = observ_loc)) +
-  geom_bar(fill = "#84128C") +
+  geom_bar(fill = "#681768") +
   theme_minimal() +
   labs(title = "Observations by Location",
        x = "Location",
@@ -66,7 +66,7 @@ latest_data %>%
 ```{r, echo=FALSE}
 latest_data %>%
   ggplot(aes(x = phone_activity)) +
-  geom_bar(fill = "#84128C") +
+  geom_bar(fill = "#681768") +
   theme_minimal() +
   labs(title = "Types of Phone Activity Observed",
        x = "Activity Type",
@@ -82,7 +82,7 @@ paste("The maximum time spent on the phone was", max(latest_data$minutes), "minu
 ```
 
 ```{r, echo=FALSE}
-summary_img <- image_blank(width = 600, height = 150, color = "733493") %>%
+summary_img <- image_blank(width = 600, height = 150, color = "#733493") %>%
   image_annotate(
     text = paste0( "Phone Use Summary\n",
       "Min: ", min(latest_data$minutes), " minutes   |   ",
