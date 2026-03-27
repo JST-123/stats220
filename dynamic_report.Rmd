@@ -13,8 +13,8 @@ library(magick)
 
 ```{css}
 body {
-  color: #000000;
-  background-color: #B4C3FA;
+  color: white;
+  background-color: #733493;
   line-height: 2;
   font-family: 'Raleway', sans-serif;
 }
@@ -32,10 +32,10 @@ This form is designed to capture brief observations of phone usage in public are
 ```{r}
 csv_file <- "https://docs.google.com/spreadsheets/d/e/2PACX-1vTRTaioXRkrCqyQKO49F7zdTbDvV1BsqhdRlngD3tI0sfc-JLx63qtKP5AgqJ3iKKgJ6LVKt4Z1mIeP/pub?gid=824138341&single=true&output=csv"
 
-header <- image_blank(width = 700, height = 100, color = "#B4C3FA") %>%
+header <- image_blank(width = 700, height = 100, color = "#733493") %>%
   image_annotate(
     text = "Observed Phone Use by Location and Activity",
-    color = "black",
+    color = "white",
     size = 25,
     gravity = "west",
     font = "Raleway",
@@ -55,7 +55,7 @@ latest_data <- logged_data %>%
 ```{r, echo=FALSE}
 latest_data %>%
   ggplot(aes(x = observ_loc)) +
-  geom_bar(fill = "darkgreen") +
+  geom_bar(fill = "#84128C") +
   theme_minimal() +
   labs(title = "Observations by Location",
        x = "Location",
@@ -66,7 +66,7 @@ latest_data %>%
 ```{r, echo=FALSE}
 latest_data %>%
   ggplot(aes(x = phone_activity)) +
-  geom_bar(fill = "steelblue") +
+  geom_bar(fill = "#84128C") +
   theme_minimal() +
   labs(title = "Types of Phone Activity Observed",
        x = "Activity Type",
@@ -82,12 +82,12 @@ paste("The maximum time spent on the phone was", max(latest_data$minutes), "minu
 ```
 
 ```{r, echo=FALSE}
-summary_img <- image_blank(width = 600, height = 150, color = "white") %>%
+summary_img <- image_blank(width = 600, height = 150, color = "733493") %>%
   image_annotate(
     text = paste0( "Phone Use Summary\n",
       "Min: ", min(latest_data$minutes), " minutes   |   ",
       "Max: ", max(latest_data$minutes), " minutes"),
-     color = "black",
+     color = "white",
      size = 30,
      gravity = "center",
      font = "Quicksand")
