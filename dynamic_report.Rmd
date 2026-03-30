@@ -23,22 +23,32 @@ p {
   font-family: 'Quicksand', sans-serif;
 }
 
+h2 {
+  font-size: 18pt;
+  font-style: normal;
+  background-color: #9d4edd;
+  font-weight: bold;
+  text-align: center;
+}
+
 ```
 
 ## Patterns of Phone Use in Public Spaces
 
-This form is designed to capture brief observations of phone usage in public areas. Its aim is to gather information on the nature of phone activities, the situational context, and the length of time the phone is used.
+This data is being collected to capture brief observations of people’s phone use in public spaces. Its purpose is to gather information about the type of phone activity observed, the context in which it occurs, and the approximate duration of use. The information collected will contribute to Statistics 220, Project 2, which focuses on identifying patterns in everyday phone behaviour across different environments.
 
 ```{r}
+
 csv_file <- "https://docs.google.com/spreadsheets/d/e/2PACX-1vTRTaioXRkrCqyQKO49F7zdTbDvV1BsqhdRlngD3tI0sfc-JLx63qtKP5AgqJ3iKKgJ6LVKt4Z1mIeP/pub?gid=824138341&single=true&output=csv"
 
-header <- image_blank(width = 700, height = 100, color = "#733493") %>%
+header <- image_blank(width = 1200, height = 100, color = "#733493") %>%
   image_annotate(
     text = "Observed Phone Use by Location and Activity",
     color = "white",
     size = 25,
-    gravity = "west",
+    gravity = "Center",
     font = "Raleway",
+    weight = 700
   )
 
 header
@@ -52,6 +62,8 @@ latest_data <- logged_data %>%
          time_of_day = 5)
 ```
 
+## Observations by Location
+
 ```{r, echo=FALSE}
 latest_data %>%
   ggplot(aes(x = observ_loc)) +
@@ -63,6 +75,10 @@ latest_data %>%
 
 ```
 
+Most observations occurred on public transport and the university campus (8, public transport; 9, university campus), while cafés/restaurants had the fewest (3). These observations suggest that busier locations are associated with more frequent phone use. This is likely because people in places like public transport and campuses spend more time commuting, waiting, or moving between tasks, which creates more opportunities to use their phones. Whereas in a café/restaurant setting, there is more face‑to‑face interaction, which explains the lower observations in these spaces.
+
+## Types of Phone Activity Observed
+
 ```{r, echo=FALSE}
 latest_data %>%
   ggplot(aes(x = phone_activity)) +
@@ -72,6 +88,10 @@ latest_data %>%
        x = "Activity Type",
        y = "Observations")
 ```
+
+Scrolling social media was the most frequently observed phone activity (8 observations), followed by gaming (5) and typing (4), while watching videos was the least common (3). Scrolling, the most observed phone activity, can be explained by people engaging in quick and easy phone use when they are out in public. In contrast, watching videos requires more sustained attention and audio, which may explain why it occurred less frequently.
+
+## Dynamic Comments
 
 ```{r, echo=FALSE}
 paste("The minimum time spent on the phone was", min(latest_data$minutes), "minutes.")
