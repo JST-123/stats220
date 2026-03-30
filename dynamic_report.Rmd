@@ -59,7 +59,7 @@ latest_data %>%
   theme_minimal() +
   labs(title = "Observations by Location",
        x = "Location",
-       y = "Count")
+       y = "Observations")
 
 ```
 
@@ -70,7 +70,7 @@ latest_data %>%
   theme_minimal() +
   labs(title = "Types of Phone Activity Observed",
        x = "Activity Type",
-       y = "Count")
+       y = "Observations")
 ```
 
 ```{r, echo=FALSE}
