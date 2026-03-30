@@ -90,11 +90,11 @@ latest_data %>%
 ## Dynamic Comments
 
 ```{r, echo=FALSE}
-paste("The least amount of time spent on observed phone usage was", min(latest_data$minutes), "minutes.")
+paste("The shortest observed phone usage time was", min(latest_data$minutes), "minutes.")
 ```
 
 ```{r, echo=FALSE}
-paste("The most amount of time spent on observed phone usage was", max(latest_data$minutes), "minutes.")
+paste("The longest observed phone usage time was", max(latest_data$minutes), "minutes.")
 ```
 
 ```{r, echo=FALSE}
