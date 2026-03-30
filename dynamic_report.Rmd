@@ -68,10 +68,10 @@ latest_data <- logged_data %>%
 latest_data %>%
   ggplot(aes(x = observ_loc)) +
   geom_bar(fill = "#681768") +
-  theme_minimal() +
-  labs(title = "Observations by Location",
-       x = "Location",
-       y = "Observations")
+  labs(title = "What are the most common locations of phone usage?",
+       subtitle = "Observations of phone usage by Location",
+       x = "Location of phone usage",
+       y = "Amount of observations")
 
 ```
 
@@ -81,10 +81,10 @@ latest_data %>%
 latest_data %>%
   ggplot(aes(x = phone_activity)) +
   geom_bar(fill = "#681768") +
-  theme_minimal() +
-  labs(title = "Types of Phone Activity Observed",
+  labs(title = "What are common phone activites?",
+       subtitle = "Types of Phone Activity Observed",
        x = "Activity Type",
-       y = "Observations")
+       y = "Amount of observations")
 ```
 
 ## Dynamic Comments
