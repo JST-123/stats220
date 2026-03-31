@@ -95,7 +95,7 @@ paste("The longest observed phone usage time was", max(latest_data$minutes), "mi
 ```
 
 ```{r, echo=FALSE}
-summary_img <- image_blank(width = 1200, height = 150, color = "#733493") %>%
+summary_img <- image_blank(width = 500, height = 150, color = "#733493") %>%
   image_annotate(
     text = paste0( "Phone Use Summary\n",
       "Min: ", min(latest_data$minutes), " minutes   |   ",
