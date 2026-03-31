@@ -23,6 +23,13 @@ p {
   font-family: 'Quicksand', sans-serif;
 }
 
+
+h1 {
+  font-size: 24pt;
+  font-style: normal;
+  font-weight: bold;
+  text-align: center;
+}
 h2 {
   font-size: 18pt;
   font-style: normal;
@@ -37,21 +44,11 @@ h2 {
 
 This data is being collected to capture brief observations of people’s phone use in public spaces. Its purpose is to gather information about the type of phone activity observed, the context in which it occurs, and the approximate duration of use. The information collected will contribute to Statistics 220, Project 2, which focuses on identifying patterns in everyday phone behavior across different environments.
 
+# Observed Phone Use by Location and Activity
+
 ```{r}
 
 csv_file <- "https://docs.google.com/spreadsheets/d/e/2PACX-1vTRTaioXRkrCqyQKO49F7zdTbDvV1BsqhdRlngD3tI0sfc-JLx63qtKP5AgqJ3iKKgJ6LVKt4Z1mIeP/pub?gid=824138341&single=true&output=csv"
-
-header <- image_blank(width = 1500, height = 100, color = "#733493") %>%
-  image_annotate(
-    text = "Observed Phone Use by Location and Activity",
-    color = "white",
-    size = 25,
-    gravity = "Center",
-    font = "Raleway",
-    weight = 700
-  )
-
-header
 
 logged_data <- read.csv(csv_file)
 
