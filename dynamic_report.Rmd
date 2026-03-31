@@ -81,7 +81,7 @@ latest_data %>%
 latest_data %>%
   ggplot(aes(x = phone_activity)) +
   geom_bar(fill = "#681768") +
-  labs(title = "What are common phone activites?",
+  labs(title = "What are common phone activities?",
        subtitle = "Types of Phone Activity Observed",
        x = "Activity Type",
        y = "Amount of observations")
